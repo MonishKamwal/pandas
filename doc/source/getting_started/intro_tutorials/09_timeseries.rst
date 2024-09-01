@@ -113,8 +113,9 @@ information and make them comparable. Hence, we can use this to get the
 length of our time series:
 
 .. ipython:: python
-
-    air_quality["datetime"].max() - air_quality["datetime"].min()
+    air_quality_max = pd.Timestamp(air_quality["datetime"].max())
+    air_quality_min = pd.Timestamp(air_quality["datetime"].min())
+    air_quality_max - air_quality_min
 
 The result is a :class:`pandas.Timedelta` object, similar to ``datetime.timedelta``
 from the standard Python library which defines a time duration.
